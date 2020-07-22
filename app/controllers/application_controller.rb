@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
   configure do
     set :views, "app/views"
     enable :sessions
-    set :session_secret, "password_security"
+    set :session_secret, "un-hackable-secret"
   end
 
   get "/" do
