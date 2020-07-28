@@ -1,10 +1,18 @@
-<% if Helpers.is_logged_in?(session) %>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tsk-Mngr</title>
+</head>
+<body>
+	<% if Helpers.is_logged_in?(session) %>
 	<h1>Welcome</h1>
 
 	<p>Here are your Tasks</p>
 
 	<p><a href="/logout">Log Out</a></p>
-<% else %>
-	You are not logged in.
-	<p><a href="/">Please Login or Signup</a></p>
-<% end%>
+	<% else %>
+		You are not logged in.
+		<p><a href="/">Please Login or Signup</a></p>
+	<% end%>
+</body>
+</html>
