@@ -1,5 +1,10 @@
-<h1>Welcome</h1>
+<% if Helpers.is_logged_in?(session) %>
+	<h1>Welcome</h1>
 
-<p>Here are your Tasks</p>
+	<p>Here are your Tasks</p>
 
-<p><a href="/logout">Log Out</a></p>
+	<p><a href="/logout">Log Out</a></p>
+<% else %>
+	You are not logged in.
+	<p><a href="/">Please Login or Signup</a></p>
+<% end%>
