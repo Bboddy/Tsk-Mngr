@@ -6,15 +6,19 @@
     <meta charset="UTF-8">
 </head>
 <body>
-	<% if Helpers.is_logged_in?(session) %>
-	<h1>Welcome</h1>
+	<section id="particles-js">
+		<div id="main">
+			<% if Helpers.is_logged_in?(session) %>
+			<h1>Welcome</h1>
 
-	<p>Here are your Tasks</p>
+			<h2>Here are your Tasks</h2>
 
-	<p><a href="/logout">Log Out</a></p>
-	<% else %>
-		You are not logged in.
-		<p><a href="/">Please Login or Signup</a></p>
-	<% end%>
+			<h3 id="logout"><a href="/logout">Log Out</a></h3>
+			<% else %>
+				You are not logged in.
+				<h2><a href="/">Please Login or Signup</a></h2>
+			<% end%>
+		</div>
+	</section>
 </body>
 </html>

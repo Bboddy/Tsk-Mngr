@@ -11,6 +11,17 @@ html{
     font-family: "Lato", Arial, sans-serif;
 }
 
+body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-color: gray;
+    overflow: hidden;
+}
+
 section{
     width: 100%;
     height: 100vh;
@@ -21,13 +32,68 @@ section{
     animation: change 10s ease-in-out infinite;
 }
 
-body{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.main{
+    top: 50%;
+    left: 50%;
     width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-color: gray;
-    overflow: hidden;
+}
+
+@keyframes change {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+
+h1{
+    background-color: rgba(0,0,0,0.25);
+    color: #fff;
+    font-size: 12rem;
+    letter-spacing: 2px;
+    border: 3px solid #fff;
+    position: absolute;
+    left: 50%;
+    margin: 450px auto;
+    transform: translate(-50%, -50%);
+    padding: 5rem 10rem;
+    text-align: center;
+    display: inline-block;
+}
+
+h2{
+    color: #fff;
+    font-size: 4rem;
+    letter-spacing: 2px;
+    position: absolute;
+    left: 50%;
+    margin: 680px auto;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: inline-block;
+}
+
+h3{
+    color: #fff;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    position: absolute;
+    left: 50%;
+    margin: 730px auto;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: inline-block;
+}
+
+a{
+    color: #a5a5a5;
+    text-decoration: none;   
+}
+
+a:hover {
+  color: #fff;
 }
