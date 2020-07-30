@@ -54,6 +54,15 @@ class ApplicationController < Sinatra::Base
     redirect "/"
   end
 
+  get "/new" do
+    erb :'/users/new'
+  end
+
+  post "/show" do
+    @task = Task.create(params)
+    #redirect to /show/id
+  end
+
   helpers do
     def logged_in?
       !!session[:user_id]
