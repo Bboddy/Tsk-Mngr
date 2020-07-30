@@ -9,8 +9,10 @@
 	<section id="particles-js">
 		<div id="main">
 			<% if Helpers.is_logged_in?(session) %>
-			<h1>Here Are Your Tasks</h1>
-
+			<h1>Welcome</h1>
+			<h3 id="show-task"><a href="tasks/show">Show Task</a></h3>
+			<h3 id="new-task"><a href="tasks/new">New Task</a></h3>
+			<h3 id="edit-task"><a href="tasks/edit">Edit Task</a></h3>
 			<h3 id="logout-home"><a href="/logout">Log Out</a></h3>
 			<% else %>
 				You are not logged in.
