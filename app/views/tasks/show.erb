@@ -8,17 +8,16 @@
 <body>
 	<section id="particles-js">
 		<h1>Your Tasks</h1>
-		<div id="inputs">
+		<h3 id="return-home"><a href="/home">Home</a></h3>
+		<div id="display">
 			<p>
 				<% @tasks = Task.where(user_id: session[:user_id]) %>
 
-				<% @tasks.each do |task|%>
-			    <li>
-			      Name: <%= task.name %>
-			      Description: <%= task.description %>
-			      Due Date: <%= task.due_date %>
-			    </li>
-			  <% end %>
+				<% @tasks.each_with_index do |task, index|%>
+
+			    <li>Task: <%= index %> Name: <%= task.name %> Description: <%= task.description %> Due Date: <%= task.due_date %></li>
+
+			  	<% end %>
 			</p>
 		</div>
 	</section>

@@ -124,6 +124,23 @@ input{
     margin: 760px auto;
 }
 
-#main{
-    
+p{
+    text-align: center;
+}
+
+li{
+    font-size: 4rem;
+}
+
+#display{
+    text-align: center;
+    overflow: hidden;
+    align-items: center;
+    margin: 630px auto;
+}
+
+#return-home{
+    padding: 4px;
+    border: 2px solid white;
+    margin: 590px auto;
 }
