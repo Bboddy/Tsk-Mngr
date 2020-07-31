@@ -7,17 +7,19 @@
 </head>
 <body>
 	<section id="particles-js">
-		<h1>Create a Task</h1>
-		<p>
-			<% @tasks = Task.where(user_id: session[:user_id]) %>
+		<h1>Your Tasks</h1>
+		<div id="inputs">
+			<p>
+				<% @tasks = Task.where(user_id: session[:user_id]) %>
 
-			<% @tasks.each do |task|%>
-		    <li>
-		      Name: <%= task.name %>
-		      Description: <%= task.ingredients %>
-		      Due Date: <%= task.cook_time %>
-		    </li>
-		  <% end %>
-		</p>
+				<% @tasks.each do |task|%>
+			    <li>
+			      Name: <%= task.name %>
+			      Description: <%= task.description %>
+			      Due Date: <%= task.due_date %>
+			    </li>
+			  <% end %>
+			</p>
+		</div>
 	</section>
 </body> 	
