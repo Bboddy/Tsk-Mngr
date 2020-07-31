@@ -13,11 +13,11 @@
 			<p>
 				<% @tasks = Task.where(user_id: session[:user_id]) %>
 
-				<% @tasks.each_with_index do |task, index|%>
+					<% @tasks.each_with_index do |task, index|%>
 
-			    <li>Task: <%= index %>. Name: <%= task.name %>. Description: <%= task.description %>. Due Date: <%= task.due_date %>. | <a href="/tasks/<%= task.id %>/edit">Edit</a></li>
+				    <li>Task: <%= index+1 %>. Name: <%= task.name %>. Description: <%= task.description %>. Due Date: <%= task.due_date %>. | <a href="/tasks/<%= task.id %>/edit">Edit</a></li>
 
-			  	<% end %>
+				<% end %>
 			</p>
 		</div>
 	</section>

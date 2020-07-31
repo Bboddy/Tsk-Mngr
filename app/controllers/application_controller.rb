@@ -59,7 +59,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/show" do
-    @task = Task.create(name: params[:name], due_date: params[:due_date], description: params[:description], user_id: session[:user_id])
+    @task = Task.create(name: params[:name], due_date: params[:due_date], description: params[:description])
     redirect '/home'
   end
 
@@ -68,12 +68,12 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/tasks/:id/edit' do
-    @task = Task.find_by_id(params[:id])
+    @task = current_user.tasks.find_by_id(params[:id])
     erb :'tasks/edit'
   end
 
   post '/tasks/:id' do #updating
-    @task = Task.find_by_id(params[:id])
+    @task = current_user.tasks.find_by_id(params[:id])
     @task.update(
       name: params[:name], 
       due_date: params[:due_date], 
@@ -82,9 +82,9 @@ class ApplicationController < Sinatra::Base
     redirect to "/show"
   end
 
-  delete '/tasks/:id/delete' do #puts em in da trash
-    @task = task.find_by_id(params[:id])
-    @task.destroy
+  delete '/tasks/:id/delete' do #Doesnt seem to delete the item fully?
+    @task = current_user.tasks.find_by_id(params[:id])
+    @task.delete
     redirect to '/show'
   end
  
