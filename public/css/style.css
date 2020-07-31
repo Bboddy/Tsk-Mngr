@@ -119,6 +119,7 @@ input{
 }
 
 #logout-home{
+    padding: 4px;
     border: 2px solid white;
     margin: 790px auto;
 }
