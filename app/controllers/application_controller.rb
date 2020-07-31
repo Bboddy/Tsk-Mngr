@@ -67,35 +67,26 @@ class ApplicationController < Sinatra::Base
     erb :'/tasks/show'
   end
 
-  get '/edit/:id' do
+  get '/tasks/:id/edit' do
     @task = Task.find_by_id(params[:id])
     erb :'tasks/edit'
   end
 
-  patch "/tasks/:id" do
-    @task = Task.find_by_id(params[:id])
-    @task.name = params[:name]
-    @task.ingredients = params[:description]
-    @task.cook_time = params[:due_date]
-    @task.save
-    redirect to "/home"
-  end
-
-  post "/tasks/:id" do
+  patch '/tasks/:id' do
     @task = Task.find_by_id(params[:id])
     @task.name = params[:name]
     @task.description = params[:description]
     @task.due_date = params[:due_date]
     @task.save
-    redirect to "/home"
+    redirect to "/tasks/#{@task.id}"
   end
 
-  delete '/tasks/:id' do 
-    @task = Task.find_by_id(params[:id])
+  delete '/show' do #destroy action
+    @task = task.find_by_id(params[:id])
     @task.delete
-    redirect to '/show'
+    redirect to '/home'
   end
-
+ 
   helpers do
     def logged_in?
       !!session[:user_id]

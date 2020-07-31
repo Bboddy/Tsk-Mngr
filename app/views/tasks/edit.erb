@@ -2,30 +2,29 @@
 <html>
 <head>
   <title>Tsk-Mngr</title>
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
   <meta charset="UTF-8">
 </head>
 <body>
-  <section id="particles-js">
-    <h1>Update Task</h1>
-    <div id="inputs">
-      <form method="POST" action="/tasks/<%=@task.id%>">
-        <input id="hidden" type="hidden" name="_method" value="patch"/>
-        <br>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" value="<%=@task.name%>"/>
-        <br>
-        <label for="description">Description</label>
-        <input type="text" id="description" name="description" value="<%=@task.description%>"/>
-        <br>
-        <label for="due_date">Due Date</label>
-        <input type="text" id="due_date" name="due_date" value="<%=@task.due_date%>"/>
-        <br>
-        <input type="submit" value="submit"/>
-        <br>
-        <input type="hidden" name="_method" value="DELETE" />
-        <input type="submit" value="delete" />
-      </form>
-    </div>
-  </section>
+  <h1>Update Task</h1>
+  <div id="inputs">
+    <form method="POST" action="/tasks/<%=@task.id%>">
+      <input id="hidden" type="hidden" name="_method" value="patch" />
+
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" value="<%=@task.name%>" />
+
+      <label for="description">Ingredients</label>
+      <input type="text" id="description" name="description" value="<%=@task.description%>" />
+
+      <label for="due_date">Cook Time</label>
+      <input type="text" id="due_date" name="due_date" value="<%=@task.due_date%>" />
+
+      <input type="submit" value="submit" />
+    </form>
+
+    <form method="POST" action="/">
+      <input type="hidden" name="_method" value="DELETE" />
+      <input type="submit" value="delete" /></form>
+  </div>
 </body>
