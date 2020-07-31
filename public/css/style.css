@@ -148,3 +148,7 @@ li{
 #home-buttons{
     margin: 640px auto;
 }
+
+label {
+    font-size: 3rem;
+}

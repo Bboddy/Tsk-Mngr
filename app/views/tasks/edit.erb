@@ -2,12 +2,12 @@
 <html>
 <head>
   <title>Tsk-Mngr</title>
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="../../css/style.css">
   <meta charset="UTF-8">
 </head>
 <body>
   <section id="particles-js">
-    <h1>Create a Task</h1>
+    <h1>Edit Your Task</h1>
       <div id="inputs">
         <form method="POST" action="/tasks/<%=@task.id%>">
           <input id="hidden" type="hidden" name="_method" value="patch" />
