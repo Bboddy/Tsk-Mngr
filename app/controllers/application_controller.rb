@@ -60,7 +60,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/show" do
-    @task = Task.create(name: params[:name], due_date: params[:due_date], description: params[:description])
+    @task = Task.create(name: params[:name], due_date: params[:due_date], description: params[:description], user_id: session[:user_id])
     redirect '/home'
   end
 
