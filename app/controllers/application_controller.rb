@@ -72,7 +72,7 @@ class ApplicationController < Sinatra::Base
     erb :'tasks/edit'
   end
 
-  post '/tasks/:id' do
+  post '/tasks/:id' do #updating
     @task = Task.find_by_id(params[:id])
     @task.update(
       name: params[:name], 
@@ -82,10 +82,10 @@ class ApplicationController < Sinatra::Base
     redirect to "/show"
   end
 
-  delete '/show' do #destroy action
+  delete '/tasks/:id/delete' do #puts em in da trash
     @task = task.find_by_id(params[:id])
-    @task.delete
-    redirect to '/home'
+    @task.destroy
+    redirect to '/show'
   end
  
   helpers do
