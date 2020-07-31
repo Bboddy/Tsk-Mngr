@@ -18,10 +18,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/signup" do
-    @user = User.find_by(username: params[:username])
-    if params[:username].empty? || params[:password].empty?
-      redirect '/failure'
-    elsif defined?(@user)
+    if params[:username].empty? || params[:password].empty? || User.exists?(username: params[:username])
       redirect '/failure'
     else
       User.create(username: params[:username],password: params[:password])

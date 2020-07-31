@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20200722093234) do
     t.string "name"
     t.string "due_date"
     t.string "description"
+    t.string "user_id"
   end
 
   create_table "users", force: :cascade do |t|

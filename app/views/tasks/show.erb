@@ -11,7 +11,13 @@
 		<p>
 			<% @tasks = Task.where(user_id: session[:user_id]) %>
 
-			<%= @tasks.each do |task| {task.to_s} %>
+			<% @tasks.each do |task|%>
+		    <li>
+		      Name: <%= task.name %>
+		      Description: <%= task.ingredients %>
+		      Due Date: <%= task.cook_time %>
+		    </li>
+		  <% end %>
 		</p>
 	</section>
-</body>
+</body> 	
