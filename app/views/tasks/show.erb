@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tsk-Mngr</title>
+	<link rel="stylesheet" href="./css/style.css">
+    <meta charset="UTF-8">
+</head>
+<body>
+	<section id="particles-js">
+		<h1>Create a Task</h1>
+		<p>
+			<% @tasks = Task.where(user_id: session[:user_id]) %>
+
+			<%= @tasks.each do |task| {task.to_s} %>
+		</p>
+	</section>
+</body>

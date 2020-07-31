@@ -63,7 +63,10 @@ class ApplicationController < Sinatra::Base
 
   post "/show" do
     @task = Task.create(params)
-    #redirect to /show/id
+  end
+
+  get '/show' do
+    erb :'/tasks/show'
   end
 
   helpers do
