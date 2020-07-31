@@ -11,7 +11,7 @@
 			<% if Helpers.is_logged_in?(session) %>
 			<h1>Welcome</h1>
 			<h3 id="home-buttons"><a href="tasks/new">New Task</a> | <a href="tasks/edit">Edit Task</a> | <a href="tasks/show">Show Task</a></h3>
-			<h2 id="logout-home"><a href="/logout">Log Out</a></h2>
+			<h3 id="logout-home"><a href="/logout">Log Out</a></h3>
 			<% else %>
 				You are not logged in.
 				<h2><a href="/">Please Login or Signup</a></h2>
