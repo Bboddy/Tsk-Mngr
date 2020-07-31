@@ -72,13 +72,14 @@ class ApplicationController < Sinatra::Base
     erb :'tasks/edit'
   end
 
-  patch '/tasks/:id' do
+  post '/tasks/:id' do
     @task = Task.find_by_id(params[:id])
-    @task.name = params[:name]
-    @task.description = params[:description]
-    @task.due_date = params[:due_date]
-    @task.save
-    redirect to "/tasks/#{@task.id}"
+    @task.update(
+      name: params[:name], 
+      due_date: params[:due_date], 
+      description: params[:description]
+    )
+    redirect to "/show"
   end
 
   delete '/show' do #destroy action
