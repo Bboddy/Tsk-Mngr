@@ -4,6 +4,7 @@ require "./app/models/user"
 class ApplicationController < Sinatra::Base
 
   configure do
+    set :method_override, true
     set :views, "app/views"
     enable :sessions
     set :session_secret, "un-hackable-secret"
@@ -82,7 +83,7 @@ class ApplicationController < Sinatra::Base
     redirect to "/show"
   end
 
-  delete '/tasks/:id/delete' do #Doesnt seem to delete the item fully?
+  delete '/tasks/:id' do #Doesnt seem to delete the item fully?
     @task = current_user.tasks.find_by_id(params[:id])
     @task.delete
     redirect to '/show'
