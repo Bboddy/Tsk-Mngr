@@ -32,12 +32,6 @@ section{
     animation: change 10s ease-in-out infinite;
 }
 
-.main{
-    top: 50%;
-    left: 50%;
-    width: 100%;
-}
-
 @keyframes change {
     0%{
         background-position: 0 50%;
@@ -128,4 +122,8 @@ input{
     padding: 4px;
     border: 2px solid white;
     margin: 760px auto;
+}
+
+#main{
+    
 }
