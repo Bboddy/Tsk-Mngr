@@ -11,7 +11,7 @@
 		<h3 id="return-home"><a href="/home">Home</a></h3>
 		<div id="display">
 			<p>
-				<% @tasks = Task.where(user_id: session[:user_id]) %>
+				<% @task = current_user.tasks.find_by_id(params[:id]) %>
 
 					<% @tasks.each_with_index do |task, index|%>
 
