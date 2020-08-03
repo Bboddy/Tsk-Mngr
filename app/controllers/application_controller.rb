@@ -74,6 +74,10 @@ class ApplicationController < Sinatra::Base
     erb :'tasks/edit'
   end
 
+  get '/test' do
+    erb :'tasks/test'
+  end
+
   patch '/tasks/:id' do #updating
     @task = current_user.tasks.find_by_id(params[:id])
     @task.update(

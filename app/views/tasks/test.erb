@@ -1,0 +1,18 @@
+</head>
+<body>
+	<section id="particles-js">
+		<h1>Your Tasks</h1>
+		<h3 id="return-home"><a href="/home">Home</a></h3>
+		<div id="display">
+			<p>
+				<% @tasks = current_user.tasks %>
+
+					<% @tasks.each do |task|%>
+
+				    <li>Task ID: <%= task.id %></li>
+
+				<% end %>
+			</p>
+		</div>
+	</section>
+</body>
